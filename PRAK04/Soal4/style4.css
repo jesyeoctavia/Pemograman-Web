@@ -1,0 +1,62 @@
+/* 2373034 - Jesye Octavia Nainggolan */
+
+body {
+    background-color: #800000;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+.box {
+    position: relative;
+    border-radius: 20px;
+    width: 200px;
+    padding: 10px;
+    background-color: #740707;
+}
+
+.box .box-tl, .box .box-tr, .box .box-bl, .box .box-br {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+}
+
+.box-tl { background: url('box_tl.gif') no-repeat; top: 0; left: 0; border-top-left-radius: 20px;}
+.box-tr { background: url('box_tr.gif') no-repeat; top: 0; right: 0; border-top-right-radius: 20px;}
+.box-bl { background: url('box_bl.gif') no-repeat; bottom: 0; left: 0; border-bottom-left-radius: 20px;}
+.box-br { background: url('box_br.gif') no-repeat; bottom: 0; right: 0; border-bottom-right-radius: 20px;}
+.box-l, .box-r {
+    position: absolute;
+    width: 15px;
+    top: 10px;
+    bottom: 15px;
+}
+
+.box-t { background: url('box_t.gif') repeat-x; top: 0; }
+.box-b { background: url('box_b.gif') repeat-x; bottom: 0; }
+.box-t, .box-b {
+    position: absolute;
+    height: 15px;
+    left: 10px;
+    right: 15px;
+}
+
+.box-l { background: url('box_l.gif') repeat-y; left: 0; }
+.box-r { background: url('box_r.gif') repeat-y; right: 0; }
+
+.box-information {
+    padding: 10px;
+    text-align: left;
+}
+
+a {
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    text-align: right;
+}
+
+a:hover {
+    color: green;
+    text-decoration: underline;
+}

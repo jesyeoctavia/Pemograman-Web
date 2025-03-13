@@ -1,0 +1,14 @@
+/* 2373034-Jesye Octavia Nainggolan */
+
+table {
+    border-collapse: collapse;
+    width: 400px;
+    height: 400px;
+}
+td {
+    width: 50px;
+    height: 50px;
+}
+.filled {
+    background-color: red;
+}
