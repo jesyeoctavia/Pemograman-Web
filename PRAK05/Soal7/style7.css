@@ -1,0 +1,123 @@
+/* 2373034-Jesye Octavia Nainggolan */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #4169E1;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 620px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #4169E1;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+#logozoo {
+    width: 120px;
+    height: 150px;
+}
+
+#lion {
+    width: 160px;
+    height: 150px;
+}
+
+.banner {
+    background-color: yellow;
+    flex-grow: 1;
+    text-align: center;
+    padding: 13px;
+    font-weight: bold;
+    width: 340px;
+    height: 124px;
+}
+
+.sidebar {
+    position: relative;
+    width: 120px;
+    float: left;
+}
+
+.sidebar ul {
+    position: absolute;
+    text-align: center;
+    color: white;
+    z-index: 10;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: underline;
+}
+
+.sidebar img {
+    width: 120px;
+    display: block;
+    z-index: 1;
+}
+
+main {
+    margin-left: 5%;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    font-weight: lighter;
+}
+
+h2 {
+    color: #4169E1;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.elephant {
+    float: right;
+    width: 200px;
+    height: 150px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
+.caption {
+    background-color: #4169E1;
+    color: #fff;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: smaller;
+    text-align: center;
+    width: 200px;
+    float: right;
+    clear: right;
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.copyright {
+    position: relative;
+    width: 86%;
+    background-color: #4169E1;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 72px;
+    margin-left: 89px;
+}

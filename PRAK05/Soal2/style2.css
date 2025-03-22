@@ -1,0 +1,42 @@
+/* 2373034 - Jesye Octavia Nainggolan */
+
+#Lright {
+    float: left;
+    position: relative;
+    top: 10px;
+    padding-left: 10px;
+    z-index: -1;
+}
+
+#Lcenter {
+    float: left;
+    position: absolute;
+    left: 70px;
+    top: 10px;
+    
+}
+
+#Lleft {
+    float: left;
+    position: relative;
+    top: 10px;
+    padding-right: 10px;
+    z-index: -1;
+}
+
+#bottom1 {
+    float: left;
+    position: absolute;
+    top: 18px;
+    left: 128px;
+    padding-right: 10px;
+
+}
+
+#bottom2 {
+    float: left;
+    position: absolute;
+    padding-right: 10px;
+    top: 18px;
+    left: 9px;
+}

@@ -1,0 +1,22 @@
+/* 2373034-Jesye Octavia Nainggolan */
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(165, 14, 14);
+    padding: 20px;
+    display: inline-block;
+    color: white;
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 200;
+}
+
+#information {
+    position: relative;
+    top: -10px;
+    color: white;
+}
+
+#system {
+    color: black;
+}

@@ -1,0 +1,59 @@
+/* 2373034-Jesye Octavia Nainggolan */
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+li {
+    position: relative;
+    border-style: dotted;
+    border-color: grey;
+    border-width: 2px;
+    margin-left: 3px;
+    padding: 0px 30px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 0px;
+    text-align: center;
+}
+
+li:hover {
+    background-color: black;
+    color: white;
+}
+
+li:hover > a {
+    color: white;
+}
+
+.newssub {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-top: none;
+}
+
+.newssub li {
+    border-style: dotted;
+    border-color: grey;
+    margin-left: 3px;
+    padding: 0px;
+}
+
+li:hover .newssub {
+    display: block;
+}
+
+.newssub a:hover {
+    background-color: black;
+    color: white;
+}

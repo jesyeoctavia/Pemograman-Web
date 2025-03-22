@@ -1,0 +1,38 @@
+/* 2373034-Jesye Octavia Nainggolan */
+
+#merah {
+    width: 493px;
+    padding: 15px 25px;
+    background: red;
+}
+
+#biru {
+    margin-top: 4px;
+    background-color: blue;
+    width: 100px;
+    height: 160px;
+    float: left;
+}
+
+#hijau {
+    margin-top: 4px;
+    margin-left: 4px;
+    padding-right: 0px;
+    background-color: green;
+    width: 439px;
+    height: 260px;
+    float : left;
+}
+
+#kuning {
+    margin: 3px;
+    background-color: yellow;
+    width: 120px;
+    height: 125px;
+    float: right;
+}
+
+.teksnya {
+    text-indent: 50px;
+    margin-left: 10px;
+}
