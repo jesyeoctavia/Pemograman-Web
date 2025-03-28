@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373034-Jesye Octavia Nainggolan</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+
+<body>
+    <div>
+        <table id="tabelInput">
+            <tr>
+                <td>Angka Pertama:</td>
+                <td><input type="text" id="angka1" onchange="doSomething1()"></td>
+            </tr>
+            <tr>
+                <td>Angka Kedua:</td>
+                <td><input type="text" id="angka2" onchange="doSomething2()"></td>
+            </tr>
+        </table>
+        <button onclick="hitung()">Count</button>
+        <div class="hasil">
+            <table>
+                <tr>
+                    <td id="kolom1"></td>
+                    <td>+</td>
+                    <td id="kolom3"></td>
+                    <td>=</td>
+                    <td id="sum"></td>
+                </tr>
+                <tr>
+                    <td id="kolom1baris2"></td>
+                    <td>-</td>
+                    <td id="kolom3baris2"></td>
+                    <td>=</td>
+                    <td id="sub"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function doSomething1() {
+            let angka1 = document.getElementById("angka1").value;
+            if(isNaN(angka1)){
+                alert("angka pertama bukan angka")
+            }else{
+                document.getElementById("kolom1").innerHTML = angka1;
+                document.getElementById("kolom1baris2").innerHTML = angka1;
+            }
+        }
+        
+        function doSomething2() {
+            let angka2 = document.getElementById("angka2").value;
+            if(isNaN(angka2)){
+                alert("angka kedua bukan angka")
+            }else{
+            document.getElementById("kolom3").innerHTML = angka2;
+            document.getElementById("kolom3baris2").innerHTML = angka2;
+            }
+        }
+        
+        function hitung() {
+            let angka1 = parseInt(document.getElementById("angka1").value);
+            let angka2 = parseInt(document.getElementById("angka2").value);
+            if (isNaN(angka1) || isNaN(angka2)) {
+                alert("angka pertama dan kedua harus angka")
+            }else{
+            document.getElementById("sum").innerHTML = angka1 + angka2;
+            document.getElementById("sub").innerHTML = angka1 - angka2;
+            }
+        }
+    </script>
+</body>
+</html>
