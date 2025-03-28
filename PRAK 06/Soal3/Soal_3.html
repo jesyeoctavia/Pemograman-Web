@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373034-Jesye Octavia Nainggolan</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 800px;
+            height: 600px;
+        }
+        td {
+            background-color: orange;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <label for="">Tinggi Piramida: </label>
+    <input type="text" id="inputTP"> <br>
+    <button onclick="buatPiramida()">proses</button> <br>
+    <table id="piramida"></table>
+
+    <script>
+        function buatPiramida() {
+            let tinggiPiramida = document.getElementById("inputTP").value;
+            let tabelPiramida = document.getElementById("piramida");
+            tabelPiramida.innerHTML = "";
+            for (let i = 0; i < tinggiPiramida; i++) {
+                let barisTabel = document.createElement("tr");
+                let jumlahSpasi = tinggiPiramida - i - 1;
+                for (let j = 0; j < jumlahSpasi; j++) {
+                    let emptyCell = document.createElement("td");
+                    emptyCell.style.backgroundColor = "white";
+                    barisTabel.appendChild(emptyCell); // menambah kedalam baris tabel
+                }
+                for (let j = 0; j < 2 * i + 1; j++) {
+                    let cell = document.createElement("td");
+                    barisTabel.appendChild(cell);
+                }
+                tabelPiramida.appendChild(barisTabel);
+            }
+        }
+    </script>
+</body>
+</html>
