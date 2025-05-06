@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373034-Jesye Octavia Nainggolan</title>
+    <style>
+        body {
+            font-family:sans-serif;
+        }
+        tr, td {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Data</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td><button>Add</button></td>
+            <td>
+                <select name="" id="">
+                    <option value="" disabled selected>Pilih Operasi</option>
+                    <option value="display">Display</option>
+                    <option value="count">Count</option>
+                    <option value="sum">Sum</option>
+                    <option value="average">Average</option>
+                    <option value="max">Max</option>
+                    <option value="min">Min</option>
+                    <option value="ganjil">Ganjil</option>
+                    <option value="genap">Genap</option>
+                    <option value="hapus">Hapus</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Hasil</td>
+            <td><input type="text" readonly></td>
+        </tr>
+    </table>
+
+    <script>
+        let isiArray = [];
+        var inputIsiArray = document.querySelectorAll('input')[0];
+        var hasil = document.querySelectorAll('input')[1];
+        var buttonAdd = document.querySelector('button');
+        var comboBox = document.querySelector('select');
+
+        buttonAdd.onclick = function() {
+            var angka = parseInt(inputIsiArray.value);
+            if (!isNaN(angka)) {
+                isiArray.push(angka);
+            }
+            inputIsiArray.value = "";
+            inputIsiArray.focus();
+        };
+    
+        comboBox.onchange = function() {
+            var operasi = comboBox.value;
+            var output = "";
+    
+            if (operasi == "display") {
+                output = isiArray.join(", ");
+            } else if (operasi == "count") {
+                output = isiArray.length;
+            } else if (operasi == "sum") {
+                var total = 0;
+                for (var i = 0; i < isiArray.length; i++) {
+                    total += isiArray[i];
+                }
+                output = total;
+            } else if (operasi == "average") {
+                var total = 0;
+                for (var i = 0; i < isiArray.length; i++) {
+                    total += isiArray[i];
+                }
+                if (isiArray.length > 0) {
+                    output = (total / isiArray.length).toFixed(2);
+                } else {
+                    output = "0";
+                }
+            } else if (operasi == "max") {
+                var max = isiArray[0];
+                for (var i = 1; i < isiArray.length; i++) {
+                    if (isiArray[i] > max) {
+                        max = isiArray[i];
+                    }
+                }
+                output = max;
+            } else if (operasi == "min") {
+                var min = isiArray[0];
+                for (var i = 1; i < isiArray.length; i++) {
+                    if (isiArray[i] < min) {
+                        min = isiArray[i];
+                    }
+                }
+                output = min;
+            } else if (operasi == "ganjil") {
+                var temp = [];
+                for (var i = 0; i < isiArray.length; i++) {
+                    if (isiArray[i] % 2 != 0) {
+                        temp.push(isiArray[i]);
+                    }
+                }
+                output = temp.join(", ");
+            } else if (operasi == "genap") {
+                var temp = [];
+                for (var i = 0; i < isiArray.length; i++) {
+                    if (isiArray[i] % 2 == 0) {
+                        temp.push(isiArray[i]);
+                    }
+                }
+                output = temp.join(", ");
+            } else if (operasi == "hapus") {
+                isiArray = [];
+                output = "";
+            }
+            hasil.value = output;
+        };
+    </script>
+</body>
+</html>

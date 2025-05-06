@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2373034-Jesye Octavia Nainggolan</title>
+    <style>
+        table {
+            border-collapse: separate;
+            border-spacing: 2px;
+        }
+        .a {
+            background-color: lightgreen;
+        }
+        .b {
+            background-color: lightblue;
+        }
+        .c {
+            background-color: lightsalmon;
+        }
+        tr:hover {
+            background-color: #CCFFAA;
+        }
+        .c3 {
+            background-color: #CCFFAA;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="a">
+            <td>Position</td>
+            <td>Programming Language</td>
+            <td>Ratings</td>
+        </tr>
+        <tr class="b">
+            <td>1</td>
+            <td>C</td>
+            <td>18.058%</td>
+        </tr>
+        <tr class="c">
+            <td>2</td>
+            <td>Java</td>
+            <td>18.051%</td>
+        </tr>
+        <tr class="b">
+            <td>3</td>
+            <td>C++</td>
+            <td>9.707%</td>
+        </tr>
+        <tr class="c">
+            <td>4</td>
+            <td>PHP</td>
+            <td>9.662%</td>
+        </tr>
+        <tr class="b">
+            <td>5</td>
+            <td>(Visual) Basic</td>
+            <td>6.392%</td>
+        </tr>
+    </table>
+    <br> <br>
+    <button id="click">Click Me</button>
+    <script>
+        document.getElementById('click').addEventListener('click', function() {
+            if (this.className === "c3") {
+                this.className = "";
+            } else {
+                this.className = "c3";
+            }
+        });
+    </script>
+</body>
+</html>
