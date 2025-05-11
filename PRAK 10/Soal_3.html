@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2373034-Jesye Octavia Nainggolan</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    div {
+        width: 30px;
+        height: 30px;
+        border: 2px solid blue;
+        margin: 5px;
+        float: left;
+    }
+</style>
+
+<script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            var stop = false;
+            $("div").each(function() {
+            if ($(this).attr("id") === "red") {
+                stop = true;
+                return false;
+            }
+            if (!stop) {
+                $(this).css("background-color", "yellow");
+            }
+            });
+        });
+
+        $("div").click(function() {
+            $(this).css("background-color", "red");
+            $(this).attr("id", "red");
+        });
+    });
+</script>
+</head>
+<body>
+    <button>Change colors</button> <br>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

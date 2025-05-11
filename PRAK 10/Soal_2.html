@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2373034-Jesye Octavia Nainggolan</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 20px;
+    }
+    
+    .search-bar {
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"] {
+        padding: 5px;
+        width: 200px;
+    }
+    
+    button {
+        padding: 5px 10px;
+        margin-left: 5px;
+    }
+    
+    .underline {
+        text-decoration: underline;
+    }
+</style>
+<script>
+    $(document).ready(function() {
+        $("#buttonAdd").click(function() {
+            var inputVal = $("#nama").val().trim();
+            
+            if(inputVal !== "") {
+                var newElement = $("<div>").addClass("nama").text(inputVal);
+                newElement.appendTo("#daftarNama");
+                $("#nama").val("");
+            }
+        });
+        $("#searchButton").click(function() {
+            var searchTerm = $("#nama").val().trim();
+            if(searchTerm !== "") {
+                $("#daftarNama div").css("text-decoration", "");
+                $("#daftarNama div:contains(" + searchTerm + ")").css("text-decoration", "underline");
+            }
+        });
+    });
+</script>
+</head>
+<body>
+    <div class="search-bar">
+        <input type="text" id="nama">
+        <button id="buttonAdd">Add</button>
+        <button id="searchButton">Search</button>
+    </div>
+    <div id="daftarNama">
+        <div>John Resig</div>
+        <div>George Martin</div>
+        <div>Malcom John Sinclair</div>
+        <div>J. Ohn</div>
+    </div>
+</body>
+</html>
