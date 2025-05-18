@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2373034-Jesye Octavia Nainggolan</title>
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+        margin: 20px;
+    }
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    table {
+        width: 100%;
+        border: 1px solid black;
+        margin-bottom: 10px;
+    }
+    td {
+        border: 1px solid black;
+        padding: 3px;
+    }
+    a {
+        color: blue;
+        text-decoration: underline;
+    }
+    .course {
+        margin-bottom: 16px;
+    }
+    .course-title {
+        margin-bottom: 4px;
+    }
+    .course-meta {
+        margin: 8px 0;
+    }
+</style>
+<script type="text/javascript" src="./../jquery.js"></script>
+<script type="text/javascript">
+    function loadData() {
+        fetch('SIJson.txt')
+        .then(function(response) {
+            return response.text();
+        })
+        .then(function(text) {
+            var data = JSON.parse(text.replace(/;$/, ''));
+
+            document.getElementById('title').innerHTML =
+            '<h3><center><a href="' + data.link + '" target="_blank">' + data.title + '</a></center></h3>';
+            
+            document.getElementById('generator').innerHTML = '&copy;' + data.generator;
+
+            var courseContent = '';
+            for (var i = 0; i < data.items.length; i++) {
+            var course = data.items[i];
+            courseContent += '<div class="course">' +
+                '<div class="course-title">' +
+                '<a href="' + course.link + '" target="_blank">' + course.title + '</a>' + '</div>' +
+                '<div>By: ' + course.author + ' / <i>' + course.published + '</i></div><br>' +
+                '<div class="course-meta">' + course.description + '</div><br>' +
+                '<div>Universitas: <a href="' + course.universitas.m + '" target="_blank">Click Here</a></div>' +
+                '<div>Tag(s): ' + course.tags + '</div>' +
+                '</div><br>';
+            }
+            document.getElementById('content').innerHTML = courseContent;
+        })
+    }
+</script>
+</head>
+
+<body>
+    <div class="container">
+    <table id="isiTabel">
+        <tr><td id="title">Title</td></tr>
+        <tr><td id="content">Content</td></tr>
+        <tr><td id="generator">Generator</td></tr>
+    </table>
+    <button onclick="loadData()">Look</button>
+    </div>
+</body>
+</html>

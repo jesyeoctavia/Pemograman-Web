@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2373034-Jesye Octavia Nainggolan</title>
+<script type="text/javascript" src="./../../jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    function loadData(choose) {
+        var json = "nilai.json";
+        if (choose === "A") {
+            json = "nilaiA.json";
+        } else if (choose === "B") {
+            json = "nilaiB.json";
+        }
+
+        $("#output").siblings().remove();
+
+        $.getJSON(json, function(data){
+            $.each(data.nilai, function(index, colm){
+                var row = $("<tr></tr>");
+                if (index % 2 === 0) {
+                    row.css("background-color", "#FFFECC");
+                } else {
+                    row.css("background-color", "#CCFFAA");
+                }
+
+                row.append("<td>" + colm.nrp + "</td>");
+                row.append("<td>" + colm.nama + "</td>");
+                row.append("<td>" + colm.kelas + "</td>");
+                row.append("<td>" + colm.nilaiakhir + "</td>");
+
+                $("table").append(row);
+            });
+        });
+    }
+    loadData("All");
+    $("button").click(function(){
+        var selectedChoose = $(":radio[name='choose']:checked").val();
+        loadData(selectedChoose);
+    });
+});
+</script>
+<style>
+    body {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    table {
+        border: 1px solid black;
+        width: 70%;
+        border-collapse: collapse;
+    }
+
+    table td, table th {
+        border: 1px solid black;
+        padding: 2px;
+    }
+
+    #output {
+        color: white;
+        background-color: black;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .tabel {
+        width: 30%;
+        border: 1px solid black;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+</style>
+</head>
+
+<body>
+    <h2>Selamat! Berikut adalah Daftar Mahasiswa yang mendapat nilai A Pemograman Web SI Tahun Ajaran 2023/2024</h2>
+    <div class="tabel">
+    <label><input type="radio" name="choose" value="All" checked> All</label><br>
+    <label><input type="radio" name="choose" value="A"> Kelas A</label><br>
+    <label><input type="radio" name="choose" value="B"> Kelas B</label><br> <br>
+    <label><button>Search</button></label>
+    </div>
+    <br> <br>
+    <table>
+        <tr id="output">
+            <td>NRP</td>
+            <td>NAMA</td>
+            <td>KELAS</td>
+            <td>NILAI AKHIR</td>
+        </tr>
+    </table>
+</body>
+</html>
